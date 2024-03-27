@@ -3,7 +3,7 @@
 let edad;
 do {
   edad = prompt('Ingrese su edad');
-  if(isNaN(edad) || edad==='' || edad===null || edad===parseFloat(edad)){ 
+  if(isNaN(edad) || edad==='' || edad===null || edad!==Number.isInteger(Number(edad))){ 
     document.write('Ingrese un número entero');
     break;
   } else{

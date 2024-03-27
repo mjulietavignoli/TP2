@@ -14,7 +14,7 @@ let cancelar;
 
 do {
   numero = prompt("Ingrese un DNI");
-  if (isNaN(numero)) {
+  if (isNaN(numero) || numero!==Number.isInteger(Number(numero))) {
     alert("Por favor, ingrese un DNI");
   } else if (numero >= 0 && numero <= 99999999) {
     numero = parseInt(numero);
