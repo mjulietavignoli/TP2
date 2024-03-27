@@ -12,12 +12,12 @@ let numero = prompt("Ingrese un numero");
 if (isNaN(numero) || !Number.isInteger(Number(numero))) {
   document.write("Ingrese un numero entero");
 } else {
-  numero = parseInt(numero);
+  numero = parseInt(numero);    
   if (numero >= 1 && numero <= 30) {
     for (let i = 1; i <= numero; i++) {
         document.write("<br>");
       for (let j = 1; j <= i; j++) {
-        document.write(i);
+        document.write(i);      
       }
     }
   }
