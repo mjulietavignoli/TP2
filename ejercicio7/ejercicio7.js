@@ -8,19 +8,23 @@
 22
 1*/
 
-let numero = prompt("Ingrese un numero del 1 al 50");
-
-if (isNaN(numero) || !Number.isInteger(Number(numero))) {
-  alert("Ingrese un numero");
-  numero = parseInt(numero);
-} else if (numero <= 50 && numero>=1) {
-  for (let i = numero; i >= 1; i--) { 
-    for (j = 1; j <= i; j++) {
+let numero;
+do {
+  numero = prompt("Ingrese un numero del 1 al 50");
+} while (
+  isNaN(numero) ||
+  numero % 1 !== 0 ||
+  numero === null ||
+  numero.trim() === ""
+);
+numero = parseInt(numero);
+if (numero <= 50 && numero >= 1) {
+  for (let i = numero; i >= 1; i--) {
+    for (let j = 1; j <= i; j++) {
       document.write(i);
     }
     document.write("<br>");
-    numero--;
   }
-} else{
-  alert("Ingrese un numero entre el 1 y el 50");
+} else {
+  alert(`${numero} no se encuentra entre el 1 y el 50`);
 }
