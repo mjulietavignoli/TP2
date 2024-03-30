@@ -5,12 +5,11 @@ let numero;
 let sumador = 0;
 do {
   numero = prompt("Ingrese numeros");
-  if (isNaN(numero) || numero === null || numero.trim() ==="") {
-    alert("Error: No ha ingresado un numero");  
-  } else {
-    numero=Number(numero);
-    sumador = sumador + numero;
+  while (isNaN(numero) || numero === null || numero.trim() === "") {
+    numero=prompt("Error: ingrese un numero nuevamente");
   }
+  numero = Number(numero);
+  sumador = sumador + numero;
   cancelar = confirm(
     "Si desea continuar pulse Aceptar, caso contrario pulse Cancelar"
   );
