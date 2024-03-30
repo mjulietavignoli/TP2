@@ -8,12 +8,12 @@
 22
 1*/
 
-let numero = prompt("Ingrese un numero");
+let numero = prompt("Ingrese un numero del 1 al 50");
 
-if (isNaN(numero)) {
+if (isNaN(numero) || !Number.isInteger(Number(numero))) {
   alert("Ingrese un numero");
-} else if (numero <= 50) {
   numero = parseInt(numero);
+} else if (numero <= 50 && numero>=1) {
   for (let i = numero; i >= 1; i--) { 
     for (j = 1; j <= i; j++) {
       document.write(i);
@@ -21,4 +21,6 @@ if (isNaN(numero)) {
     document.write("<br>");
     numero--;
   }
+} else{
+  alert("Ingrese un numero entre el 1 y el 50");
 }

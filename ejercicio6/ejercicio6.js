@@ -8,7 +8,7 @@
 666666
 …….*/
 
-let numero = prompt("Ingrese un numero");
+let numero = prompt("Ingrese un numero del 1 al 30");
 if (isNaN(numero) || !Number.isInteger(Number(numero))) {
   document.write("Ingrese un numero entero");
 } else {
