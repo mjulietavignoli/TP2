@@ -9,89 +9,21 @@ Si lo introducido no es un número deberá indicarse con un alert y volver a pre
 Deberá de repetirse el proceso hasta que el usuario pulse «cancelar».*/
 
 let numero;
-
 let cancelar;
 
 do {
   numero = prompt("Ingrese un DNI");
-  while (isNaN(numero) || numero%1!==0) {
-    numero = prompt("Por favor, ingrese un DNI");
-  } if (numero >= 0 && numero <= 99999999) {
-    numero = parseInt(numero);
-    let resto = numero % 23;
-    switch (resto) {
-      case 0:
-        alert("T");
-        break;
-      case 1:
-        alert("R");
-        break;
-      case 2:
-        alert("W");
-        break;
-      case 3:
-        alert("A");
-        break;
-      case 4:
-        alert("G");
-        break;
-      case 5:
-        alert("M");
-        break;
-      case 6:
-        alert("Y");
-        break;
-      case 7:
-        alert("F");
-        break;
-      case 8:
-        alert("P");
-        break;
-      case 9:
-        alert("D");
-        break;
-      case 10:
-        alert("X");
-        break;
-      case 11:
-        alert("B");
-        break;
-      case 12:
-        alert("N");
-        break;
-      case 13:
-        alert("J");
-        break;
-      case 14:
-        alert("Z");
-        break;
-      case 15:
-        alert("S");
-        break;
-      case 16:
-        alert("Q");
-        break;
-      case 17:
-        alert("V");
-        break;
-      case 18:
-        alert("H");
-        break;
-      case 19:
-        alert("L");
-        break;
-      case 20:
-        alert("C");
-        break;
-      case 21:
-        alert("K");
-        break;
-      case 22:
-        alert("E");
-        break;
-    }
-  } else{
-    alert('Demasiados números ingresados');
+  while (isNaN(numero) || numero % 1 !== 0 || numero === null) {
+    numero = prompt("Por favor, ingrese un DNI válido");
+  }
+  numero = parseInt(numero);
+  if (numero >= 0 && numero <= 99999999) {
+    let indice = numero % 23;
+    let letras = "TRWAGMYFPDXBNJZSQVHLCKE";
+    let letra = letras.charAt(indice);
+    alert(`La letra es: ${letra}`);
+  } else {
+    alert("El número de DNI debe estar entre 0 y 99999999");
   }
   cancelar = confirm(
     "Si desea continuar pulse Aceptar, caso contrario pulse Cancelar"
